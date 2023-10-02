@@ -11,3 +11,6 @@ class TestBase:
 
     def teardown_class(self):
         self.APP.driver_instance.stop_driver()
+
+    def teardown_method(self):
+        print(123123123123)
