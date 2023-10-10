@@ -8,7 +8,7 @@ class Locator:
     input_search = (By.XPATH, '//input[@class="arrow__input mini-suggest__input"]')
     iframe_search = (By.XPATH, '//iframe[contains(@class, "search-arrow__frame")]')
     button_search = (By.XPATH, '//button[@data-testid="search-button"]')
-    button_games = (By.XPATH, '//button[@data-testid="news-tabs-tab-item-games"]')
+    button_games = (By.XPATH, '//a[@data-testid="news-tabs-tab-item-games"]')
 
 class ActionsInMainPage(FWBase):
 
@@ -18,6 +18,9 @@ class ActionsInMainPage(FWBase):
 
     def get_city_name_on_tab_city(self):
         return self.find_element(Locator.city_name).text
+
+    def get_name_on_tab_games(self):
+        return self.find_element(Locator.button_games).text
 
     def send_keys_in_search(self, text):
         self.send_keys_in_i_frame(Locator.iframe_search, Locator.input_search, text)

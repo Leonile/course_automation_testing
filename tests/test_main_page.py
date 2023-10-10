@@ -18,3 +18,8 @@ class TestMain(TestBase):
         assert self.APP.search_page.check_element_search()
         assert self.APP.search_page.get_text_tab_search() == 'Поиск'
 
+    def test_go_to_tab_games(self):
+        self.APP.actions_in_main_page.click_button_games()
+        assert self.APP.actions_in_main_page.get_name_on_tab_games() == 'Игры'
+
+
