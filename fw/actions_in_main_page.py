@@ -8,7 +8,7 @@ class Locator:
     input_search = (By.XPATH, '//input[@class="arrow__input mini-suggest__input"]')
     iframe_search = (By.XPATH, '//iframe[contains(@class, "search-arrow__frame")]')
     button_search = (By.XPATH, '//button[@data-testid="search-button"]')
-
+    button_games = (By.XPATH, '//button[@data-testid="news-tabs-tab-item-games"]')
 
 class ActionsInMainPage(FWBase):
 
@@ -25,4 +25,8 @@ class ActionsInMainPage(FWBase):
 
     def click_button_search(self):
         self.click_element(Locator.button_search)
+        return self
+
+    def click_button_games(self):
+        self.click_element(Locator.button_games)
         return self
