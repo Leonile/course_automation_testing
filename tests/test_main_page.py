@@ -23,3 +23,6 @@ class TestMain(TestBase):
         assert self.APP.actions_in_main_page.get_name_on_tab_games() == 'Игры'
 
 
+    def test_tab_auto(self):
+        self.APP.actions_in_main_page.click_button_auto()
+        assert self.APP.actions_in_main_page.get_name_on_tab_auto() == 'Авто'
